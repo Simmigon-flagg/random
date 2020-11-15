@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Question Game</title>
+  </head>
+
+  <body>
+    <h1>Question Game!</h1>
+
+    <p id="score">
+    </p>
+    <p id="question"></p>
+
+    <script>
+      // VARIABLES
+      // ==========================================================================
+
+      let questionIndex = 0;
+
+      
+      let rand =  Math.floor((Math.random() * (90 - 65)) + 65);
+      document.onkeyup = function (e) {
+        questionIndex++;
+        if (e.key === "q") {
+          alert("Correct");
+          questionIndex = 0;
+          rand = Math.floor((Math.random() * (90 - 65)) + 65);
+        } else {
+      
+        }
+        document.querySelector("#score").innerHTML =
+          "<h1>Number of Key Presses: " +
+          questionIndex +
+          "<br /> You Key was <br />" +
+          e.which +
+          "<br />" +
+          rand +
+          "</h1>";
+      };
+    </script>
+  </body>
+</html>
